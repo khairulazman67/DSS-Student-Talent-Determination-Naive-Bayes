@@ -9,8 +9,8 @@ use Illuminate\Support\Facades\DB;
 class PostController extends Controller
 {
     public function index(){
-        $data = DB::table('histori')->get();
-        $count = DB::table('histori')->count();
+        $data = DB::table('historis')->get();
+        $count = DB::table('historis')->count();
         $mhs = DB::table('users')->where('isAdmin', '0')->count();
         return view('admin.homepage', compact('data','count','mhs') );
     }
