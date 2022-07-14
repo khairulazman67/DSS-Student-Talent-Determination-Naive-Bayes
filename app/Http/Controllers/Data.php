@@ -10,7 +10,7 @@ class Data extends Controller
 {
     public function index(){
         $id = Auth::user()->name;
-        $data = DB::table('histori')->where('nama', $id)->get();
+        $data = DB::table('historis')->where('nama', $id)->get();
         return view('user.homepage', compact('data'));
     }
     public function profile(){
