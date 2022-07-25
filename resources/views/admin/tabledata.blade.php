@@ -13,13 +13,13 @@
     </section>
 
     <section id="home">
-        <div class="container border-b-2 border-black mx-auto my-8">
-            <h2 class="text-center uppercase font-serif text-4xl font-bold text-purple-700">Data Mahasiswa</h2>
+        <div class="container border-b-4 border-black mx-auto my-8">
+            <h2 class="text-center uppercase font-serif text-4xl font-bold text-black">Data Mahasiswa</h2>
         </div>
     </section>
 
     <div class="container flex mx-auto my-4 w-full">
-        <a href="" class="border rounded-3xl py-1 px-4 bg-purple-300 hover:bg-purple-400 hover:text-white text-gray-600 font-serif">
+        <a href="" class="border rounded-3xl py-1 px-4 hover:text-white text-black font-serif" style="background-color: rgba(213, 221, 209, 1)"">
             + Tambah Data
         </a>
     </div>
@@ -27,13 +27,13 @@
     <section id="table">
         <div class="container flex mx-auto mt-5 w-full">
             <div class="w-full rounded-3xl overflow-hidden shadow-lg">
-                <div class="bg-purple-600 text-white">
+                <div class="text-white" style="background-color: rgba(64, 94, 79, 1)">
                     <h1 class=" py-2 px-4">Data mahasiswa</h1>
                 </div>
                 <div class="w-full">
                     <div class="mx-6 py-2">
                         <table class="divide-y divide-gray-300 w-full" id="dataTable">
-                            <thead class="bg-purple-600">
+                            <thead style="background-color: rgba(64, 94, 79, 1)">
                                 <tr>
                                     <th class="px-6 py-2 text-xs text-white">
                                         ID
@@ -85,8 +85,12 @@
                                         </td>
                                         <td class="px-6 py-4">
                                             <a href="{{ route('data', $dt->id) }}"
-                                                class="inline-block text-white py-1 px-2 rounded-lg text-center border bg-purple-400">
-                                                Detail
+                                                class="inline-block text-white py-1 px-2 rounded-lg text-center border" style="background-color: rgba(64, 94, 79, 1)">
+                                                edit
+                                            </a>
+                                            <a href="{{ route('data', $dt->id) }}"
+                                                class="inline-block text-white py-1 px-2 rounded-lg text-center border" style="background-color: rgba(64, 94, 79, 1)">
+                                                Hapus
                                             </a>
                                         </td>
                                     </tr>

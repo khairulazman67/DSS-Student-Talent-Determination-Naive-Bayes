@@ -26,9 +26,11 @@ Route::prefix('admin')->group(function(){
     Route::middleware(['auth:sanctum','admin'])->group(function(){
         Route::get('/', [PostController::class, 'index']);
         Route::get('/datastudent', [Studentpage::class, 'index']);
-        Route::get('/pengujian', [Studentpage::class, 'pengujian']);
+        Route::get('/pengujian', [Studentpage::class, 'pengujian'])->name('pengujian');
         Route::get('/mahasiswa{id}', [Studentpage::class, 'edit'])->name('data');
+        Route::get('/histori', [Studentpage::class, 'histori'])->name('histori');
         Route::get('/save{id}', [Studentpage::class, 'update'])->name('edit');
+        Route::get('/uji', [Studentpage::class, 'upload'])->name('uji');
     });
 });
 

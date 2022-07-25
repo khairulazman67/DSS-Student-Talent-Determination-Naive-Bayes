@@ -15,16 +15,17 @@
 
     <section>
         <div class="container flex mx-auto ">
-            <div class="flex justify-center w-full py-4 border-b-2 border-black">
-                <h3 class="text-4xl font-bold text-purple-800">BERANDA ADMIN</h3>
+            <div class="flex justify-center w-full py-4 border-b-4 border-black">
+                <h3 class="text-4xl font-bold text-black">BERANDA ADMIN</h3>
             </div>
+            <a href="{{ route('uji') }}">awdwa</a>
         </div>
         <div class="container flex mx-auto mt-10 mb-10">
             <div class=" w-full flex flex-wrap justify-between text-white text-2xl font-serif">
-                <div class="shadow-lg rounded-2xl w-80 p-7 bg-purple-400 relative overflow-hidden">
+                <div class="shadow-lg rounded-2xl w-80 p-7 relative overflow-hidden" style="background-color: rgba(213, 221, 209, 1)">
                     <div class="w-full flex flex-col space-y-1">
-                        <h2 class="border-b-2 border-white">Mahasiswa</h2>
-                        <div class="text-white flex flex-wrap items-center space-x-2">
+                        <h2 class="border-b-2 border-black text-black">Mahasiswa</h2>
+                        <div class="text-black flex flex-wrap items-center space-x-2">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" viewBox="0 0 20 20"
                                 fill="currentColor">
                                 <path
@@ -36,10 +37,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="shadow-lg rounded-2xl w-80 p-7 bg-purple-400 relative overflow-hidden">
+                <div class="shadow-lg rounded-2xl w-80 p-7 bg-purple-400 relative overflow-hidden" style="background-color: rgba(213, 221, 209, 1)">
                     <div class="w-full flex flex-col space-y-1">
-                        <h2 class="border-b-2 border-white">Jumlah Pengujian</h2>
-                        <div class="text-white flex flex-wrap space-x-2">
+                        <h2 class="border-b-2 border-black text-black">Jumlah Pengujian</h2>
+                        <div class="text-black flex flex-wrap space-x-2">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" viewBox="0 0 20 20"
                                 fill="currentColor">
                                 <path fill-rule="evenodd"
@@ -52,11 +53,11 @@
                         </div>
                     </div>
                 </div>
-                <div class="shadow-lg rounded-2xl w-80 p-7 bg-purple-400 relative overflow-hidden">
+                <div class="shadow-lg rounded-2xl w-80 p-7 bg-purple-400 relative overflow-hidden" style="background-color: rgba(213, 221, 209, 1)">
                     <div class="w-full flex flex-col space-y-1">
                         <?php date_default_timezone_set('Asia/jakarta'); ?>
-                        <h2 class="border-b-2 border-white"><?php echo date('D'); ?> , <?php echo date('j/m/Y'); ?></h2>
-                        <h2><?php echo date('h:i:s a'); ?></h2>
+                        <h2 class="border-b-2 border-black text-black"><?php echo date('D'); ?> , <?php echo date('j/m/Y'); ?></h2>
+                        <h2 class="text-black"><?php echo date('h:i:s a'); ?></h2>
                     </div>
                 </div>
             </div>

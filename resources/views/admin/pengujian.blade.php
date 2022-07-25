@@ -13,25 +13,25 @@
     </section>
 
     <section id="home">
-        <div class="container border-b-2 border-purple-800 mx-auto my-6">
-            <h2 class="text-center uppercase font-serif text-4xl text-purple-800 font-bold">Data Training</h2>
+        <div class="container border-b-4 border-black mx-auto my-6">
+            <h2 class="text-center uppercase font-serif text-4xl text-black font-bold">Data Training</h2>
         </div>
         <div class="container mx-auto">
-            <a href="" class="bg-purple-300 py-2 rounded-lg px-2 font-serif text-gray-600 font-bold hover:text-white shadow-lg">
-                + Add Data
+            <a href="" class="py-1 rounded-3xl px-4 font-serif text-black hover:text-white shadow-lg" style="background-color: rgba(213, 221, 209, 1)">
+                + Tambah Data
             </a>
         </div>
     </section>
     <section id="table">
         <div class="container flex mx-auto mt-5 w-full">
-            <div class="w-full rounded overflow-hidden shadow-lg">
-                <div class="bg-purple-600 text-white">
+            <div class="w-full rounded-3xl overflow-hidden shadow-lg">
+                <div class="text-white" style="background-color: rgba(64, 94, 79, 1)">
                     <h1 class="py-2 px-4">Data mahasiswa</h1>
                 </div>
                 <div class="w-full">
                     <div class="mx-6 py-2">
                         <table class="divide-y divide-gray-300 w-full" id="dataTable">
-                            <thead class="bg-purple-600">
+                            <thead style="background-color: rgba(64, 94, 79, 1)">
                                 <tr>
                                     <th class="px-6 py-2 text-xs text-white">
                                         ID
@@ -85,7 +85,7 @@
                                         </td>
                                         <td class="px-6 py-4">
                                             <a href="#"
-                                                class="inline-block text-white py-1 px-2 rounded-lg text-center border bg-purple-400">
+                                                class="inline-block text-white py-1 px-2 rounded-lg text-center border" style="background-color: rgba(64, 94, 79, 1)">
                                                 Detail
                                             </a>
                                         </td>
