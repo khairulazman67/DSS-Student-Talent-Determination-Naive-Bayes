@@ -36,12 +36,11 @@ Route::prefix('admin')->group(function(){
 
 Route::prefix('user')->group(function(){
     Route::middleware(['auth:sanctum','user'])->group(function(){
-        Route::get('/', [Data::class, 'index']);  
+        Route::get('/', [Data::class, 'index']);
+        Route::get('/test',[Data::class, 'test'])->name('test');
+        Route::get('/profile', [Data::class, 'profile']);  
     });
-    Route::get('/test   ', function () {
-        return view('user.test');
-    });
-    Route::get('/profile', [Data::class, 'profile']);
+    
 });
 
 

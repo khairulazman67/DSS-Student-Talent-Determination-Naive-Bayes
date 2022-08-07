@@ -26,7 +26,7 @@
         <div class="container flex mx-auto mt-5 w-full">
             <div class="w-full rounded-3xl overflow-hidden shadow-lg">
                 <div class="text-white" style="background-color: rgba(64, 94, 79, 1)">
-                    <h1 class="py-2 px-4">Data mahasiswa</h1>
+                    <h1 class="py-2 px-4">Data Training Verbal</h1>
                 </div>
                 <div class="w-full">
                     <div class="mx-6 py-2">
@@ -37,19 +37,37 @@
                                         ID
                                     </th>
                                     <th class="px-6 py-2 text-xs text-white">
-                                        Jenis kelamin
+                                        soal1
                                     </th>
                                     <th class="px-6 py-2 text-xs text-white">
-                                        Pekerjaan
+                                        Soal2
                                     </th>
                                     <th class="px-6 py-2 text-xs text-white">
-                                        Status
+                                        Soal3
                                     </th>
                                     <th class="px-6 py-2 text-xs text-white">
-                                        IPK
+                                        Soal4
                                     </th>
                                     <th class="px-6 py-2 text-xs text-white">
-                                        Lulus
+                                        Soal5
+                                    </th>
+                                    <th class="px-6 py-2 text-xs text-white">
+                                        Soal6
+                                    </th>
+                                    <th class="px-6 py-2 text-xs text-white">
+                                        Soal7
+                                    </th>
+                                    <th class="px-6 py-2 text-xs text-white">
+                                        Soal8
+                                    </th>
+                                    <th class="px-6 py-2 text-xs text-white">
+                                        Soal9
+                                    </th>
+                                    <th class="px-6 py-2 text-xs text-white">
+                                        Soal10
+                                    </th>
+                                    <th class="px-6 py-2 text-xs text-white">
+                                        Hasil
                                     </th>
                                     <th class="px-6 py-2 text-xs text-white">
                                         Aksi
@@ -64,23 +82,53 @@
                                         </td>
                                         <td class="px-6 py-4">
                                             <div class="text-sm text-gray-900">
-                                                {{ $dt->jenis_kelamin }}
+                                                {{ $dt->soal1 }}
                                             </div>
                                         </td>
                                         <td class="px-6 py-4 text-sm text-gray-500">
-                                            {{ $dt->pekerjaan }}
+                                            {{ $dt->soal2 }}
                                         </td>
                                         <td class="px-6 py-4 text-sm text-gray-500">
-                                            {{ $dt->status }}
+                                            {{ $dt->soal3 }}
                                         </td>
                                         <td class="px-6 py-4">
                                             <div class="text-sm text-gray-500">
-                                                {{ $dt->ipk }}
+                                                {{ $dt->soal4 }}
                                             </div>
                                         </td>
                                         <td class="px-6 py-4">
                                             <div class="text-sm text-gray-500">
-                                                {{ $dt->lulus }}
+                                                {{ $dt->soal5 }}
+                                            </div>
+                                        </td>
+                                        <td class="px-6 py-4">
+                                            <div class="text-sm text-gray-500">
+                                                {{ $dt->soal6 }}
+                                            </div>
+                                        </td>
+                                        <td class="px-6 py-4">
+                                            <div class="text-sm text-gray-500">
+                                                {{ $dt->soal7 }}
+                                            </div>
+                                        </td>
+                                        <td class="px-6 py-4">
+                                            <div class="text-sm text-gray-500">
+                                                {{ $dt->soal8 }}
+                                            </div>
+                                        </td>
+                                        <td class="px-6 py-4">
+                                            <div class="text-sm text-gray-500">
+                                                {{ $dt->soal9 }}
+                                            </div>
+                                        </td>
+                                        <td class="px-6 py-4">
+                                            <div class="text-sm text-gray-500">
+                                                {{ $dt->soal10 }}
+                                            </div>
+                                        </td>
+                                        <td class="px-6 py-4">
+                                            <div class="text-sm text-gray-500">
+                                                {{ $dt->hasil }}
                                             </div>
                                         </td>
                                         <td class="px-6 py-4">

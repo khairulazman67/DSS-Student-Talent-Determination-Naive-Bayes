@@ -14,8 +14,13 @@ class Data extends Controller
         return view('user.homepage', compact('data'));
     }
     public function profile(){
-        $id = Auth::user()->name;
-        $data = DB::table('users')->where('name', $id)->get();
+        $id = Auth::user()->email;
+        $data = DB::table('users')->where('email', $id)->get();
         return view('user.profile', compact('data'));
+    }
+    public function test(){
+        $tipe = 'verbal';
+        $soal = DB::table('soals')->where('tipe', $tipe)->get();
+        return view('user.test', compact('soal'));
     }
 }

@@ -1,4 +1,4 @@
-<div class="flex justify-end bg-purple-600">
+<div class="py-1 flex justify-end" style="background-color: rgba(64, 94, 79, 1)">
     <form method="POST" action="{{ route('logout') }}">
         @csrf
         <button type="submit" class="text-white px-3 font-bold hover:text-black">
@@ -11,29 +11,30 @@
     </form>
 </div>
 <div>
-    <div class="bg-purple-400 flex flex-row justify-center space-x-4 py-2">
+    <div class="flex flex-row justify-center space-x-4 py-2" style="background-color: rgba(213, 221, 209, 1)">
         <img src="{{ asset('img/pnl1.png') }}" alt="" style="width: 7rem; height: 7rem;">
         <div class="py-6">
-            <h2 class="flex justify-center font-bold text-lg text-white uppercase ">Sistem Penentuan Bakat Mahasiswa
-                Jurusan
-                TIK</h2>
-            <h2 class="flex justify-center text-lg font-mono text-white font-semibold">Menggunakan Metode Naive Bayes
+            <h2 class="flex justify-center font-bold text-lg uppercase text-black">Sistem Penentuan Bakat Mahasiswa Jurusan TIK</h2>
+            <h2 class="flex justify-center text-lg font-mono font-semibold text-black">Menggunakan Metode Naive Bayes
             </h2>
         </div>
     </div>
 </div>
 <div class="">
-    <nav class="relative w-full flex flex-wrap items-center justify-between bg-purple-600 shadow-lg navbar-dark">
+    <nav class="relative w-full flex flex-wrap items-center justify-between shadow-lg navbar-dark" style="background-color: rgba(125, 159, 128, 1)">
         <div class="navbar-collapse flex-grow items-cente px-12">
             <ul class="navbar-nav flex flex-row pl-0 list style-none mr-auto justify-center text-lg text-white">
-                <li class="nav-item py-2 bg-purple-700 hover:bg-purple-300 hover:text-black px-12">
+                <li class="nav-item py-2 hover:text-black px-12" style="background-color: rgba(64, 94, 79, 1)">
                     <a href="{{ url('user') }}">Beranda</a>
                 </li>
-                <li class="nav-item py-2 px-6 bg-purple-700 hover:bg-purple-300 hover:text-black">
-                    <a href="{{ url('user/test') }}">Pengujian</a>
+                <li class="nav-item py-2 hover:text-black px-12" style="background-color: rgba(64, 94, 79, 1)">
+                    <a href="{{ route('test') }}">Pengujian</a>
                 </li>
-                <li class="nav-item py-2 px-8 bg-purple-700 hover:bg-purple-300 hover:text-black">
-                    <a href="{{ url('user/profile') }}">Data Diri</a>
+                <li class="nav-item py-2 hover:text-black px-12" style="background-color: rgba(64, 94, 79, 1)">
+                    <a href="{{ url('user/profile') }}">Data Mahasiswa</a>
+                </li>
+                <li class="nav-item py-2 hover:text-black px-12" style="background-color: rgba(64, 94, 79, 1)">
+                    <a href="{{ url('user/profile') }}">Histori</a>
                 </li>
             </ul>
         </div>
