@@ -4,7 +4,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.pipeline import Pipeline
 from sklearn.compose import ColumnTransformer
 from jcopml.pipeline import num_pipe, cat_pipe
-df = pd.read_csv("C:/xampp/htdocs/data/public/python/Data/datasetverbal.csv")
+df = pd.read_csv("C:/xampp/htdocs/data/public/python/Data/verbal.csv")
 X = df.drop(columns="Hasil")
 y = df.Hasil
 
