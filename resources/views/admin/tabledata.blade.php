@@ -19,7 +19,7 @@
     </section>
 
     <div class="container flex mx-auto my-4 w-full">
-        <a href="" class="border rounded-3xl py-1 px-4 hover:text-white text-black font-serif" style="background-color: rgba(213, 221, 209, 1)"">
+        <a href="{{ route('add') }}" class="border rounded-3xl py-1 px-4 hover:text-white text-black font-serif" style="background-color: rgba(213, 221, 209, 1)"">
             + Tambah Data
         </a>
     </div>

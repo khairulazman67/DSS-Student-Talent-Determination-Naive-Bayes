@@ -14,7 +14,7 @@ class Studentpage extends Controller
  
     }
     public function pengujian(){
-        $data = DB::table('soals')->get();
+        $data = DB::table('dataset')->get();
         return view('admin.pengujian', compact('data'));
     }
 
@@ -41,5 +41,21 @@ class Studentpage extends Controller
         $hasil = $kita[0];
         session()->put('bakatverbal', $hasil);
         return view('admin.histori', compact('hasil','title','data'));
+    }
+
+    public function add(){
+        return view('admin.add');
+    }
+
+    public function post(Request $request){
+        $request->validate([
+            'name' => ['required', 'string', 'max:255'],
+            'nim' =>['required', 'string', 'max:15'],
+            'prodi' =>['required', 'string', 'max:255'],
+            'alamat' =>['required', 'string', 'max:255'],
+            'jurusan' =>['required', 'string', 'max:255'],
+            'nohp' =>['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users']
+        ]);
     }
 }

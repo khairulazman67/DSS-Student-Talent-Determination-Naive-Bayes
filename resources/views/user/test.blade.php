@@ -47,6 +47,19 @@
                             </div>
                         </div>
                     @endforeach
+                    <div class="my-4 mx-4 flex justify-end">
+                        <?php
+                        if ($tipe != "bahasa"){
+                            ?>
+                            <a href="{{ route('hitung',$id+1) }}" class="rounded-lg py-1 px-6 text-white" style="background-color: rgba(64, 94, 79, 1)">Next</a>
+                            <?php
+                        }else{
+                            ?>
+                            <a href="{{ route('hitung',$id+1) }}" class="rounded-lg py-1 px-6 text-white" style="background-color: rgba(64, 94, 79, 1)">Selesai</a>
+                            <?php
+                        }
+                        ?>
+                    </div>
                 </form>
             </div>
         </div>

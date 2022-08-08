@@ -25,15 +25,53 @@ class Data extends Controller
         return view('user.uji');
     }
 
-    public function test(){
-        $tipe = 'verbal';
+    public function test($id){
+        
+        if ($id == 1){
+            $tipe = "verbal";
+        }if($id == 2 ){
+            $tipe = "numerik";
+        }if($id == 3){
+            $tipe = "skolastik";
+        }if($id == 4){
+            $tipe = "spasial";
+        }if($id == 5){
+            $tipe = "bahasa";
+        }
+        
         $soal = DB::table('soals')->where('tipe', $tipe)->get();
-        return view('user.test', compact('soal'));
+        return view('user.test', compact('soal','id','tipe'));
     }
     public function histori(){
         $id = Auth::user()->name;
         $data = DB::table('historis')->where('nama', $id)->get();
         return view('user.homepage', compact('data'));
+    }
+    public function upload($id){
+        $a = shell_exec(escapeshellcmd("python C:/xampp/htdocs/data/public/python/verbal.py"));
+        $kita = explode('_______________________', $a);
+        $hasil = $kita[0];
+        $verbal = session()->get('bakatverbal');
+        $numerik = session()->get('numerik');
+        $skolastik = session()->get('bakatverbal');
+        $spasial = session()->get('bakatverbal');
+        $bahasa = session()->get('bakatverbal');
+        if($verbal == Null){
+            session()->put('bakatverbal', $hasil);
+        }elseif($numerik == Null){
+            session()->put('numerik', $hasil);
+        }elseif($skolastik == Null){
+            session()->put('skolastik', $hasil);
+        }elseif($spasial == Null){
+            session()->put('spasial', $hasil);
+        }elseif($bahasa == Null){
+            session()->put('bahasa', $hasil);
+        }
+        if($id == 6){
+            return redirect(route('hasil'));
+        }else{
+            return redirect(route('test',$id));
+        }
     }
     public function update(Request $request, $id){
         $data = User::find($id);
@@ -46,5 +84,14 @@ class Data extends Controller
         $data->email = $request->input('email');
         $data->update();
         return redirect()->back()->with('status','Update Success');
+    }
+    public function hasil(){
+        $verbal = session()->get('bakatverbal');
+        $numerik = session()->get('numerik');
+        $skolastik = session()->get('bakatverbal');
+        $spasial = session()->get('bakatverbal');
+        $bahasa = session()->get('bakatverbal');
+
+        return view('user.hasil', compact('verba','numeric','skolastik','spasial','bahasa'));
     }
 }
