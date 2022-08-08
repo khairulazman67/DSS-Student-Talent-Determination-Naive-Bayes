@@ -1,10 +1,12 @@
 import pandas as pd
+import os
 from scipy.sparse import csr_matrix
 from sklearn.model_selection import train_test_split
 from sklearn.pipeline import Pipeline
 from sklearn.compose import ColumnTransformer
 from jcopml.pipeline import num_pipe, cat_pipe
-df = pd.read_csv("C:/xampp/htdocs/data/public/python/Data/verbal.csv")
+pq = pd.read_csv("C:/xampp/htdocs/data/public/python/Data/verbal.csv")
+df = pq
 X = df.drop(columns="Hasil")
 y = df.Hasil
 
