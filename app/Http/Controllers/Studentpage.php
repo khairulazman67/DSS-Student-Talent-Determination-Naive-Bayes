@@ -14,7 +14,7 @@ class Studentpage extends Controller
  
     }
     public function pengujian(){
-        $data = DB::table('pengujian')->get();
+        $data = DB::table('soals')->get();
         return view('admin.pengujian', compact('data'));
     }
 

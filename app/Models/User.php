@@ -21,6 +21,9 @@ class User extends Authenticatable
         'name',
         'nim',
         'prodi',
+        'alamat',
+        'jurusan',
+        'nohp',
         'email',
         'password',
         'isAdmin'

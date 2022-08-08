@@ -18,6 +18,9 @@ return new class extends Migration
             $table->string('name');
             $table->string('nim');
             $table->string('prodi');
+            $table->string('jurusan');
+            $table->string('nohp');
+            $table->string('alamat');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');

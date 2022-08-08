@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\Studentpage;
 use App\Http\Controllers\Data;
-
+use App\Http\Controllers\Admin;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,7 +24,7 @@ Route::get('/register', function(){
 
 Route::prefix('admin')->group(function(){
     Route::middleware(['auth:sanctum','admin'])->group(function(){
-        Route::get('/', [PostController::class, 'index']);
+        Route::get('/', [Admin::class, 'index'])->name('homepage');
         Route::get('/datastudent', [Studentpage::class, 'index']);
         Route::get('/pengujian', [Studentpage::class, 'pengujian'])->name('pengujian');
         Route::get('/mahasiswa{id}', [Studentpage::class, 'edit'])->name('data');
@@ -37,8 +37,11 @@ Route::prefix('admin')->group(function(){
 Route::prefix('user')->group(function(){
     Route::middleware(['auth:sanctum','user'])->group(function(){
         Route::get('/', [Data::class, 'index']);
-        Route::get('/test',[Data::class, 'test'])->name('test');
-        Route::get('/profile', [Data::class, 'profile']);  
+        Route::get('/uji', [Data::class, 'uji'])->name('uji');
+        Route::get('/uji/mulai',[Data::class, 'test'])->name('test');
+        Route::get('/profile', [Data::class, 'profile'])->name('profile');
+        Route::get('/histori', [Data::class, 'histori'])->name('histori');
+        Route::post('/edit{id}', [Data::class, 'update'])->name('edit'); 
     });
     
 });

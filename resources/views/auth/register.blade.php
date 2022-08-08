@@ -36,6 +36,30 @@
                     required autofocus />
             </div>
 
+            {{-- Jurusan --}}
+            <div class="mt-4">
+                <x-label for="jurusan" :value="__('Jurusan')" />
+
+                <x-input id="jurusan" class="block mt-1 w-full" type="text" name="jurusan" :value="old('jurusan')"
+                    required autofocus />
+            </div>
+
+            {{-- Alamat --}}
+            <div class="mt-4">
+                <x-label for="alamat" :value="__('Alamat')" />
+
+                <x-input id="alamat" class="block mt-1 w-full" type="text" name="alamat" :value="old('alamat')"
+                    required autofocus />
+            </div>
+
+            {{-- Nohp --}}
+            <div class="mt-4">
+                <x-label for="nohp" :value="__('No Hp')" />
+
+                <x-input id="nohp" class="block mt-1 w-full" type="tel" name="nohp" :value="old('nohp')"
+                    required autofocus />
+            </div>
+
             <!-- Email Address -->
             <div class="mt-4">
                 <x-label for="email" :value="__('Email')" />

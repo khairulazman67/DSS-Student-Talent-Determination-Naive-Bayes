@@ -28,13 +28,13 @@
                     <a href="{{ url('user') }}">Beranda</a>
                 </li>
                 <li class="nav-item py-2 hover:text-black px-12" style="background-color: rgba(64, 94, 79, 1)">
-                    <a href="{{ route('test') }}">Pengujian</a>
+                    <a href="{{ route('uji') }}">Pengujian</a>
                 </li>
                 <li class="nav-item py-2 hover:text-black px-12" style="background-color: rgba(64, 94, 79, 1)">
                     <a href="{{ url('user/profile') }}">Data Mahasiswa</a>
                 </li>
                 <li class="nav-item py-2 hover:text-black px-12" style="background-color: rgba(64, 94, 79, 1)">
-                    <a href="{{ url('user/profile') }}">Histori</a>
+                    <a href="{{ route('histori') }}">Histori</a>
                 </li>
             </ul>
         </div>

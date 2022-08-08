@@ -25,9 +25,10 @@
                 </div>
                 <form action="" method="POST">
                     @csrf
-                    @foreach ($soal as $s)
+                    @foreach ($soal as $i => $s)
                         <div class="px-4 py-2">
                             <h2 class="font-serif">
+                                {{ ++$i }}.
                                 {{ $s->soal }}
                             </h2>
                         </div>

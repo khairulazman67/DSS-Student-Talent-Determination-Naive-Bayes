@@ -22,7 +22,7 @@
             <div class="navbar-collapse flex-grow items-cente px-12">
                 <ul class="navbar-nav flex flex-row pl-0 list style-none mr-auto justify-center text-lg text-white">
                     <li class="nav-item py-2 hover:text-black px-12" style="background-color: rgba(64, 94, 79, 1)">
-                        <a href="{{ url('admin') }}">Beranda</a>
+                        <a href="{{ route('homepage') }}">Beranda</a>
                     </li>
                     <li class="nav-item py-2 hover:text-black px-12" style="background-color: rgba(64, 94, 79, 1)">
                         <a href="{{ route('pengujian') }}">Pengujian</a>
