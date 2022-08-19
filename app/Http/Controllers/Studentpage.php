@@ -14,8 +14,12 @@ class Studentpage extends Controller
  
     }
     public function pengujian(){
-        $data = DB::table('dataset')->get();
-        return view('admin.pengujian', compact('data'));
+        $verbal = DB::table('dataset')->where('Hasil','like','%Verbal%')->limit(5)->get();
+        // $numerik = DB::table('dataset')->where('Hasil','like','%Numerik%')->limit(5)->get();
+        // $data = DB::table('dataset')->where('Hasil','like','%%')->limit(5)->get();
+        // $data = DB::table('dataset')->where('Hasil','like','%%')->limit(5)->get();
+        // $data = DB::table('dataset')->where('Hasil','like','%%')->limit(5)->get();
+        return view('admin.pengujian', compact('verbal'));
     }
 
     public function edit($id){
@@ -49,7 +53,7 @@ class Studentpage extends Controller
 
     public function post(Request $request){
         $request->validate([
-            'name' => ['required', 'string', 'max:255'],
+            'nama' => ['required', 'string', 'max:255'],
             'nim' =>['required', 'string', 'max:15'],
             'prodi' =>['required', 'string', 'max:255'],
             'alamat' =>['required', 'string', 'max:255'],

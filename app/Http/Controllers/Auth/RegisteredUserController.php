@@ -34,23 +34,27 @@ class RegisteredUserController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => ['required', 'string', 'max:255'],
+            'nama' => ['required', 'string', 'max:255'],
             'nim' =>['required', 'string', 'max:15'],
-            'prodi' =>['required', 'string', 'max:255'],
-            'alamat' =>['required', 'string', 'max:255'],
-            'jurusan' =>['required', 'string', 'max:255'],
+            'id_prodi' =>['required', 'string', 'max:255'],
+            'id_jurusan' =>['required', 'string', 'max:255'],
             'nohp' =>['required', 'string', 'max:255'],
+            'alamat' =>['required', 'string', 'max:255'],
+            'jeniskelamin' =>['required', 'string', 'max:255'],
+            'tgllahir' =>['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
 
         $user = User::create([
-            'name' => $request->name,
+            'nama' => $request->name,
             'nim' => $request->nim,
-            'prodi' => $request->prodi,
-            'alamat' => $request->prodi,
-            'jurusan' => $request->jurusan,
+            'id_prodi' => $request->prodi,
+            'id_jurusan' => $request->jurusan,
             'nohp' => $request->nohp,
+            'alamat' => $request->prodi,
+            'jeniskelamin' => $request->jeniskelamin,
+            'tgllahir' => $request->tgllahir,
             'email' => $request->email,
             'isAdmin' => 0,
             'password' => Hash::make($request->password),

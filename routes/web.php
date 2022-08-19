@@ -25,21 +25,20 @@ Route::get('/register', function(){
 Route::prefix('admin')->group(function(){
     Route::middleware(['auth:sanctum','admin'])->group(function(){
         Route::get('/', [Admin::class, 'index'])->name('homepage');
-        Route::get('/datastudent', [Studentpage::class, 'index']);
-        Route::get('/pengujian', [Studentpage::class, 'pengujian'])->name('pengujian');
-        Route::get('/mahasiswa{id}', [Studentpage::class, 'edit'])->name('data');
-        Route::get('/histori', [Studentpage::class, 'histori'])->name('histori');
-        Route::get('/add', [Studentpage::class, 'add'])->name('add');
-        Route::get('/add/data', [Studentpage::class, 'post'])->name('post');
-        Route::get('/save{id}', [Studentpage::class, 'update'])->name('edit');
-        Route::get('/uji', [Studentpage::class, 'upload'])->name('uji');
+        Route::get('/datastudent', [Admin::class, 'datastudent']);
+        Route::get('/pengujian', [Admin::class, 'pengujian'])->name('pengujian');
+        Route::get('/mahasiswa{id}', [Admin::class, 'edit'])->name('data');
+        Route::get('/save{id}', [Admin::class, 'update'])->name('edit');
+        Route::get('/histori', [Admin::class, 'histori'])->name('histori');
+        Route::get('/add', [Admin::class, 'create'])->name('add');
+        Route::get('/add/data', [Admin::class, 'store'])->name('post');
     });
 });
 
 Route::prefix('user')->group(function(){
     Route::middleware(['auth:sanctum','user'])->group(function(){
         Route::get('/', [Data::class, 'index']);
-        Route::get('/', [Data::class, 'hasil'])->name('hasil');
+        Route::get('/hasil', [Data::class, 'hasil'])->name('hasil');
         Route::get('/uji', [Data::class, 'uji'])->name('uji');
         Route::get('/hitung{id}', [Data::class, 'upload'])->name('hitung');
         Route::get('/uji/mulai{id}',[Data::class, 'test'])->name('test');

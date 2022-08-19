@@ -18,7 +18,6 @@
             <div class="flex justify-center w-full py-4 border-b-4 border-black">
                 <h3 class="text-4xl font-bold text-black">BERANDA ADMIN</h3>
             </div>
-            <a href="{{ route('uji') }}">awdwa</a>
         </div>
         <div class="container flex mx-auto mt-10 mb-10">
             <div class=" w-full flex flex-wrap justify-between text-white text-2xl font-serif">

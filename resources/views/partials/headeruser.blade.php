@@ -12,7 +12,6 @@
 </div>
 <div>
     <div class="flex flex-row justify-center space-x-4 py-2" style="background-color: rgba(213, 221, 209, 1)">
-        <img src="{{ asset('img/pnl1.png') }}" alt="" style="width: 7rem; height: 7rem;">
         <div class="py-6">
             <h2 class="flex justify-center font-bold text-lg uppercase text-black">Sistem Penentuan Bakat Mahasiswa Jurusan TIK</h2>
             <h2 class="flex justify-center text-lg font-mono font-semibold text-black">Menggunakan Metode Naive Bayes

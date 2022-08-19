@@ -92,6 +92,6 @@ class Data extends Controller
         $spasial = session()->get('bakatverbal');
         $bahasa = session()->get('bakatverbal');
 
-        return view('user.hasil', compact('verba','numeric','skolastik','spasial','bahasa'));
+        return view('user.hasil', compact('verbal','numerik','skolastik','spasial','bahasa'));
     }
 }
