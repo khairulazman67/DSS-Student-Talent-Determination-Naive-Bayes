@@ -93,7 +93,7 @@ class Admin extends Controller
      */
     public function edit($id)
     {
-        $data = DB::table('users')->where('id', $id)->get();
+        $data = DB::table('users')->where('id', $id)->first();
         return view('admin.datastudent', compact('data'));
     }
 
