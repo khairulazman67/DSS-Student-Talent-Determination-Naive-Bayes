@@ -25,13 +25,13 @@ Route::get('/register', function(){
 Route::prefix('admin')->group(function(){
     Route::middleware(['auth:sanctum','admin'])->group(function(){
         Route::get('/', [Admin::class, 'index'])->name('homepage');
-        Route::get('/datastudent', [Admin::class, 'datastudent']);
+        Route::get('/datastudent', [Admin::class, 'datastudent'])->name('student');
         Route::get('/pengujian', [Admin::class, 'pengujian'])->name('pengujian');
         Route::get('/mahasiswa{id}', [Admin::class, 'edit'])->name('data');
         Route::get('/save{id}', [Admin::class, 'update'])->name('edit');
-        Route::get('/histori', [Admin::class, 'histori'])->name('histori');
+        Route::get('/histori', [Admin::class, 'histori'])->name('historis');
         Route::get('/add', [Admin::class, 'create'])->name('add');
-        Route::get('/add/data', [Admin::class, 'store'])->name('post');
+        Route::post('/add/data', [Admin::class, 'store'])->name('post');
     });
 });
 

@@ -24,7 +24,6 @@
             + Tambah Data
         </a>
     </div>
-    <p>{{ session()->get("bakatverbal") }}abc</p>
 
     <section id="table">
         <div class="container flex mx-auto mt-5 w-full">

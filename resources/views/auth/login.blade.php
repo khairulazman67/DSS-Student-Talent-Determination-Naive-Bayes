@@ -88,6 +88,9 @@
                                             {{ __('Forgot your password?') }}
                                         </a>
                                     @endif --}}
+                                    <a href="{{ route('register') }}" class="inline-flex items-center px-4 py-2 bg-cyan-300 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:ring ring-gray-300 disabled:opacity-25 transition ease-in-out duration-150">
+                    {{ __('Register') }}
+                </a>
                                     <button type="submit"
                                         class="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">LOGIN</button>
                                 </div>

@@ -2,8 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Jurusan;
+use App\Models\Prodi;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rules;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 class Admin extends Controller
 {
@@ -14,8 +19,8 @@ class Admin extends Controller
      */
     public function index()
     {
-        $data = DB::table('historis')->get();
-        $count = DB::table('historis')->count();
+        $data = DB::table('hasilpengujians')->get();
+        $count = DB::table('hasilpengujians')->count();
         $mhs = DB::table('users')->where('isAdmin', '0')->count();
         return view('admin.homepage', compact('data','count','mhs') );
     }
@@ -27,7 +32,9 @@ class Admin extends Controller
      */
     public function create()
     {
-        return view('admin.add');
+        $jurusan = Jurusan::all();
+        $prodi = Prodi::all();
+        return view('admin.add', compact('jurusan', 'prodi'));
     }
 
     /**
@@ -41,12 +48,30 @@ class Admin extends Controller
         $request->validate([
             'nama' => ['required', 'string', 'max:255'],
             'nim' =>['required', 'string', 'max:15'],
-            'prodi' =>['required', 'string', 'max:255'],
-            'alamat' =>['required', 'string', 'max:255'],
-            'jurusan' =>['required', 'string', 'max:255'],
+            'prodi_id' =>['required', 'string', 'max:255'],
+            'jurusan_id' =>['required', 'string', 'max:255'],
             'nohp' =>['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users']
+            'alamat' =>['required', 'string', 'max:255'],
+            'jeniskelamin' =>['required', 'string', 'max:255'],
+            'tgllahir' =>['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
+
+        $user = User::create([
+            'nama' => $request->nama,
+            'nim' => $request->nim,
+            'prodi_id' => $request->jurusan_id,
+            'jurusan_id' => $request->jurusan_id,
+            'nohp' => $request->nohp,
+            'alamat' => $request->alamat,
+            'jeniskelamin' => $request->jeniskelamin,
+            'tgllahir' => $request->tgllahir,
+            'email' => $request->email,
+            'isAdmin' => 0,
+            'password' => Hash::make($request->password),
+        ]);
+        echo "selesai";
     }
 
     /**
@@ -97,21 +122,23 @@ class Admin extends Controller
 
     public function datastudent(){
         $pegawai = DB::table('users')->get();
-    	return view('admin.tabledata',['data' => $pegawai]);
+        $data = User::first();
+        $u = $data->post;
+    	return view('admin.tabledata', compact('pegawai', 'u'));
     }
 
     public function pengujian(){
-        $verbal = DB::table('dataset')->where('Hasil','like','%Verbal%')->limit(5)->get();
-        // $numerik = DB::table('dataset')->where('Hasil','like','%Numerik%')->limit(5)->get();
-        // $data = DB::table('dataset')->where('Hasil','like','%%')->limit(5)->get();
-        // $data = DB::table('dataset')->where('Hasil','like','%%')->limit(5)->get();
-        // $data = DB::table('dataset')->where('Hasil','like','%%')->limit(5)->get();
-        return view('admin.pengujian', compact('verbal'));
+        $verbal = DB::table('datasets')->where('Hasil','like','%Verbal%')->limit(5)->get();
+        $numerik = DB::table('datasets')->where('Hasil','like','%Numerik%')->limit(5)->get();
+        // $data = DB::table('datasets')->where('Hasil','like','%%')->limit(5)->get();
+        // $data = DB::table('datasets')->where('Hasil','like','%%')->limit(5)->get();
+        // $data = DB::table('datasets')->where('Hasil','like','%%')->limit(5)->get();
+        return view('admin.pengujian', compact('verbal', 'numerik'));
     }
 
     public function histori(){ 
         $title = "Histori";
-        $data = DB::table('historis')->get();
+        $data = DB::table('hasilpengujians')->get();
         return view('admin.histori', compact('data', 'title'));
     }
 

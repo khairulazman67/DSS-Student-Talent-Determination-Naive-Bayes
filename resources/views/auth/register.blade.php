@@ -14,9 +14,9 @@
 
             <!-- Name -->
             <div class="mt-4">
-                <x-label for="name" :value="__('Name')" />
+                <x-label for="nama" :value="__('Name')" />
 
-                <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required
+                <x-input id="nama" class="block mt-1 w-full" type="text" name="nama" :value="old('nama')" required
                     autofocus />
             </div>
 
@@ -32,7 +32,7 @@
             <div class="mt-4">
                 <x-label for="prodi" :value="__('Prodi')" />
 
-                <x-input id="prodi" class="block mt-1 w-full" type="text" name="prodi" :value="old('prodi')"
+                <x-input id="prodi" class="block mt-1 w-full" type="text" name="prodi_id" :value="old('prodi')"
                     required autofocus />
             </div>
 
@@ -40,7 +40,7 @@
             <div class="mt-4">
                 <x-label for="jurusan" :value="__('Jurusan')" />
 
-                <x-input id="jurusan" class="block mt-1 w-full" type="text" name="jurusan" :value="old('jurusan')"
+                <x-input id="jurusan" class="block mt-1 w-full" type="text" name="jurusan_id" :value="old('jurusan')"
                     required autofocus />
             </div>
 
@@ -61,6 +61,20 @@
             </div>
 
             <!-- Email Address -->
+            <div class="mt-4">
+                <x-label for="email" :value="__('Jenis Kelamin')" />
+
+                <x-input id="email" class="block mt-1 w-full" type="text" name="jeniskelamin" :value="old('jeniskelamin')"
+                    required />
+            </div>
+
+            <div class="mt-4">
+                <x-label for="tgllahir" :value="__('tanggal lahir')" />
+
+                <x-input id="tgllahir" class="block mt-1 w-full" type="text" name="tgllahir" :value="old('tanggal lahir')"
+                    required />
+            </div>
+
             <div class="mt-4">
                 <x-label for="email" :value="__('Email')" />
 

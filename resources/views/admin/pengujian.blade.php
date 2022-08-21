@@ -155,7 +155,7 @@
         <div class="flex mx-auto mt-5 w-full">
             <div class="w-full rounded-3xl overflow-hidden shadow-lg">
                 <div class="text-white" style="background-color: rgba(64, 94, 79, 1)">
-                    <h1 class="py-2 px-4">Data Training Verbal</h1>
+                    <h1 class="py-2 px-4">Data Training Numerik</h1>
                 </div>
                 <div class="w-full overflow-auto">
                     <div class="mx-6 py-2">
@@ -206,7 +206,7 @@
                                     </th>
                                 </tr>
                             </thead>
-                            @foreach ($verbal as $i => $dt)
+                            @foreach ($numerik as $i => $o)
                                 <tbody class="bg-white divide-y divide-gray-300">
                                     <tr class="text-center whitespace-nowrap">
                                         <td class="px-6 py-4 text-sm text-gray-500">
@@ -214,63 +214,63 @@
                                         </td>
                                         <td class="px-6 py-4">
                                             <div class="text-xs text-gray-900">
-                                                {{ $dt->nim }}
+                                                {{ $o->nim }}
                                             </div>
                                         </td>
                                         <td class="px-6 py-4">
                                             <div class="text-xs text-gray-900">
-                                                {{ $dt->nama }}
+                                                {{ $o->nama }}
                                             </div>
                                         </td>
                                         <td class="px-6 py-4">
                                             <div class="text-xs text-gray-900">
-                                                {{ $dt->Soal1 }}
+                                                {{ $o->Soal1 }}
                                             </div>
                                         </td>
                                         <td class="px-6 py-4 text-xs text-gray-500">
-                                            {{ $dt->Soal2 }}
+                                            {{ $o->Soal2 }}
                                         </td>
                                         <td class="px-6 py-4 text-xs text-gray-500">
-                                            {{ $dt->Soal3 }}
+                                            {{ $o->Soal3 }}
                                         </td>
                                         <td class="px-6 py-4">
                                             <div class="text-xs text-gray-500">
-                                                {{ $dt->Soal4 }}
+                                                {{ $o->Soal4 }}
                                             </div>
                                         </td>
                                         <td class="px-6 py-4">
                                             <div class="text-xs text-gray-500">
-                                                {{ $dt->Soal5 }}
+                                                {{ $o->Soal5 }}
                                             </div>
                                         </td>
                                         <td class="px-6 py-4">
                                             <div class="text-xs text-gray-500">
-                                                {{ $dt->Soal6 }}
+                                                {{ $o->Soal6 }}
                                             </div>
                                         </td>
                                         <td class="px-6 py-4">
                                             <div class="text-xs text-gray-500">
-                                                {{ $dt->Soal7 }}
+                                                {{ $o->Soal7 }}
                                             </div>
                                         </td>
                                         <td class="px-6 py-4">
                                             <div class="text-xs text-gray-500">
-                                                {{ $dt->Soal8 }}
+                                                {{ $o->Soal8 }}
                                             </div>
                                         </td>
                                         <td class="px-6 py-4">
                                             <div class="text-xs text-gray-500">
-                                                {{ $dt->Soal9 }}
+                                                {{ $o->Soal9 }}
                                             </div>
                                         </td>
                                         <td class="px-6 py-4">
                                             <div class="text-xs text-gray-500">
-                                                {{ $dt->Soal10 }}
+                                                {{ $o->Soal10 }}
                                             </div>
                                         </td>
                                         <td class="px-6 py-4">
                                             <div class="text-xs text-gray-500">
-                                                {{ $dt->Hasil }}
+                                                {{ $o->Hasil }}
                                             </div>
                                         </td>
                                     </tr>

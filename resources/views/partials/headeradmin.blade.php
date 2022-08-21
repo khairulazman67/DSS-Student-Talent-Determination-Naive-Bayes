@@ -30,7 +30,7 @@
                         <a href="{{ url('admin/datastudent') }}">Data Mahasiswa</a>
                     </li>
                     <li class="nav-item py-2 px-6 hover:text-black" style="background-color: rgba(64, 94, 79, 1)">
-                        <a href="{{ route('histori') }}">Histori</a>
+                        <a href="{{ route('historis') }}">Histori</a>
                     </li>
                 </ul>
             </div>

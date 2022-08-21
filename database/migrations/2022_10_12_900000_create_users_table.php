@@ -17,10 +17,8 @@ return new class extends Migration
             $table->id();
             $table->string('nama');
             $table->string('nim');
-            $table->unsignedBigInteger('id_prodi');
-            $table->unsignedBigInteger('id_jurusan');
-            $table->foreign('id_prodi')->references('id')->on('prodis')->onDelete('cascade')->onUpdate('cascade');
-            $table->foreign('id_jurusan')->references('id')->on('jurusans')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreignId('prodi_id')->constrained();
+            $table->foreignId('jurusan_id')->constrained();
             $table->string('nohp');
             $table->string('alamat');
             $table->string('jeniskelamin');

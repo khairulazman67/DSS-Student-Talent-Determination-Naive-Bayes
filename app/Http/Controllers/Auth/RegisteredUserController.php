@@ -36,8 +36,8 @@ class RegisteredUserController extends Controller
         $request->validate([
             'nama' => ['required', 'string', 'max:255'],
             'nim' =>['required', 'string', 'max:15'],
-            'id_prodi' =>['required', 'string', 'max:255'],
-            'id_jurusan' =>['required', 'string', 'max:255'],
+            'prodi_id' =>['required', 'string', 'max:255'],
+            'jurusan_id' =>['required', 'string', 'max:255'],
             'nohp' =>['required', 'string', 'max:255'],
             'alamat' =>['required', 'string', 'max:255'],
             'jeniskelamin' =>['required', 'string', 'max:255'],
@@ -47,12 +47,12 @@ class RegisteredUserController extends Controller
         ]);
 
         $user = User::create([
-            'nama' => $request->name,
+            'nama' => $request->nama,
             'nim' => $request->nim,
-            'id_prodi' => $request->prodi,
-            'id_jurusan' => $request->jurusan,
+            'prodi_id' => $request->jurusan_id,
+            'jurusan_id' => $request->jurusan_id,
             'nohp' => $request->nohp,
-            'alamat' => $request->prodi,
+            'alamat' => $request->alamat,
             'jeniskelamin' => $request->jeniskelamin,
             'tgllahir' => $request->tgllahir,
             'email' => $request->email,
@@ -62,7 +62,7 @@ class RegisteredUserController extends Controller
 
         event(new Registered($user));
 
-        Auth::login($user);
+        // Auth::login($user);
 
         return redirect(RouteServiceProvider::HOME);
     }

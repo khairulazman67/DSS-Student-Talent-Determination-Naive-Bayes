@@ -58,7 +58,7 @@
                                     </th>
                                 </tr>
                             </thead>
-                            @foreach ($data as $i => $dt)
+                            @foreach ($pegawai as $i => $dt)
                                 <tbody class="bg-white divide-y divide-gray-300">
                                     <tr class="text-center whitespace-nowrap">
                                         <td class="px-6 py-4 text-sm text-gray-500">
@@ -66,7 +66,7 @@
                                         </td>
                                         <td class="px-6 py-4">
                                             <div class="text-sm text-gray-900">
-                                                {{ $dt->name }}
+                                                {{ $dt->nama }}
                                             </div>
                                         </td>
                                         <td class="px-6 py-4 text-sm text-gray-500">
@@ -76,11 +76,11 @@
                                             kelas
                                         </td>
                                         <td class="px-6 py-4 text-sm text-gray-500">
-                                            {{ $dt->prodi }}
+                                            {{ $dt->prodi_id }}
                                         </td>
                                         <td class="px-6 py-4">
                                             <div class="text-sm text-gray-500">
-                                                jurusan
+                                                {{ $dt->jurusan_id }}
                                             </div>
                                         </td>
                                         <td class="px-6 py-4">
@@ -101,7 +101,6 @@
                 </div>
             </div>
         </div>
-    </section>
 </body>
 
 </html>
