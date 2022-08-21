@@ -20,6 +20,21 @@ class Userseeder extends Seeder
     {
         User::create(
             [
+                'nama' => 'admin',
+                'nim' => '1',
+                'email' => 'admin@gmail.com',
+                'id_prodi' => '1',
+                'id_jurusan' => '1',
+                'nohp' => '1',
+                'alamat' => 'admin',
+                'tgllahir' => '6 juli 2000',
+                'jeniskelamin' => 'Laki-laki',
+                'isAdmin' => '1',
+                'password' => Hash::make('azman123'),
+            ]
+        );
+        User::create(
+            [
                 'nama' => 'Azman',
                 'nim' => '1857301038',
                 'email' => 'azman.khairul67@gmail.com',
