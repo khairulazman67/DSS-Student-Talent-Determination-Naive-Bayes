@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Soal;
 use App\Models\User;
+use App\Models\Hasilpengujian;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
@@ -11,13 +12,18 @@ use Illuminate\Support\Facades\Auth;
 class Data extends Controller
 {
     public function index(){
-        $id = Auth::user()->name;
-        $data = DB::table('historis')->where('nama', $id)->get();
+        $id = Auth::user()->id;
+        // dd($id);
+        $data = Hasilpengujian::where('id_user', $id)->get();
+        // dd($data);
         return view('user.homepage', compact('data'));
     }
     public function profile(){
-        $id = Auth::user()->email;
-        $data = DB::table('users')->where('email', $id)->get();
+        $id = Auth::user()->id;
+
+        $data = User::where('id', $id)->get();
+        // $data = DB::table('hasilpengujians')->where('id', $id)->get();
+        // dd($data->user);
         return view('user.profile', compact('data'));
     }
 
@@ -26,7 +32,7 @@ class Data extends Controller
     }
 
     public function test($id){
-        
+
         if ($id == 1){
             $tipe = "verbal";
         }if($id == 2 ){
@@ -38,13 +44,13 @@ class Data extends Controller
         }if($id == 5){
             $tipe = "bahasa";
         }
-        
+
         $soal = DB::table('soals')->where('tipe', $tipe)->get();
         return view('user.test', compact('soal','id','tipe'));
     }
     public function histori(){
-        $id = Auth::user()->name;
-        $data = DB::table('historis')->where('nama', $id)->get();
+        $id = Auth::user()->id;
+        $data = Hasilpengujian::where('id_user', $id)->get();
         return view('user.homepage', compact('data'));
     }
     public function upload($id){

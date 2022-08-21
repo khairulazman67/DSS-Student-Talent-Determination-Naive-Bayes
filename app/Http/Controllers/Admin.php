@@ -22,7 +22,6 @@ class Admin extends Controller
     {
         $data = DB::table('hasilpengujians')->get();
         $count = DB::table('hasilpengujians')->count();
-// sads
         $mhs = DB::table('users')->where('isAdmin', '0')->count();
         return view('admin.homepage', compact('data','count','mhs') );
     }

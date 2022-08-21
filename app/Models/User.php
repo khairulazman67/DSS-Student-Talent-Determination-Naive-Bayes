@@ -8,7 +8,6 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
-use App\Models\Jurusan;
 
 class User extends Authenticatable
 {
@@ -20,6 +19,7 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
+        'id',
         'nama',
         'nim',
         'prodi_id',
@@ -51,8 +51,8 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-    public function hasilpengujian(){
-        return $this->hasMany(Hasilpengujian::class);
+    public function Hasilpengujian(){
+        return $this->hasMany(Hasilpengujian::class,'id_user');
     }
     public function jurusan()
     {
@@ -60,6 +60,6 @@ class User extends Authenticatable
     }
     public function prodi()
     {
-        return $this->belongsTo(Prodi::class);
+        return $this->belongsTo(Prodi::class,'prodi_id','id');
     }
 }

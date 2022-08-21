@@ -18,8 +18,9 @@
         </div>
         <div class="container my-8 mx-auto">
             <div class="border rounded-lg shadow-purple-200 shadow-lg">
+
                 @foreach ($data as $i => $dt)
-                    <form action="{{ route('edit',$dt->id) }}" method="post">
+                    <form action="#" method="post">
                         @csrf
                         <div class="flex flex-wrap">
                             <div class="w-full justify-center px-20 py-10 relative lg:w-1/2">
@@ -27,7 +28,7 @@
                                     <div class="grid grid-cols-3 gap-2">
                                         <h2 class="col-start-1 self-center">Nama Mahasiswa</h2>
                                         <input type="hidden" name="id" id="id" value="{{ $dt->id }}">
-                                        <input type="text" name="nama" id="nama" value="{{ $dt->name }}"
+                                        <input type="text" name="nama" id="nama" value="{{ $dt->nama }}"
                                             class="col-start-2 col-span-2 py-2 bg-gray-200 border-0 rounded-md">
                                     </div>
                                     <div class="grid grid-cols-3 gap-2">
@@ -37,12 +38,12 @@
                                     </div>
                                     <div class="grid grid-cols-3 gap-2">
                                         <h2 class="col-start-1 self-center">Prodi</h2>
-                                        <input type="text" name="prodi" id="prodi" value="{{ $dt->prodi }}"
+                                        <input type="text" name="prodi" id="prodi" value="{{ $dt->prodi->nama }}"
                                             class="col-start-2 col-span-2 py-2 bg-gray-200 border-0 rounded-md">
                                     </div>
                                     <div class="grid grid-cols-3 gap-2">
                                         <h2 class="col-start-1 self-center">Jurusan</h2>
-                                        <input type="text" name="jurusan" id="jurusan" value="{{ $dt->jurusan }}"
+                                        <input type="text" name="jurusan" id="jurusan" value="{{ $dt->jurusan->nama }}"
                                             class="col-start-2 col-span-2 py-2 bg-gray-200 border-0 rounded-md">
                                     </div>
                                 </div>

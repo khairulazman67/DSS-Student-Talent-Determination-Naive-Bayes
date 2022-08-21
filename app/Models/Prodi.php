@@ -9,12 +9,14 @@ class Prodi extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
-        'nama',
-        'jurusan_id'
-    ];
-    public function user(){
-        return $this->hasMany(User::class);
+    // protected $fillable = [
+    //     'id',
+    //     'nama',
+    //     'jurusan_id'
+    // ];
+    public function User(){
+        return $this->hasMany(User::class,'prodi_id');
+        // return $this->hasMany(Prodi::class,'id_jurusan');
     }
     public function jurusan(){
         return $this->belongsTo(Jurusan::class);

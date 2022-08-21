@@ -57,14 +57,14 @@
                                         </td>
                                         <td class="px-6 py-4">
                                             <div class="text-sm text-gray-900">
-                                                {{ $dt->nama }}
+                                                {{ $dt->User->nama }}
                                             </div>
                                         </td>
                                         <td class="px-6 py-4 text-sm text-gray-500">
-                                            {{ $dt->nim }}
+                                            {{ $dt->user->nim }}
                                         </td>
                                         <td class="px-6 py-4 text-sm text-gray-500">
-                                            {{ $dt->hasil_pengujian }}
+                                            {{ $dt->hasil }}
                                         </td>
                                         </td>
                                         <td class="px-6 py-4">
