@@ -51,7 +51,9 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-
+    public function hasilpengujian(){
+        return $this->hasMany(Hasilpengujian::class);
+    }
     public function jurusan()
     {
         return $this->belongsTo(Jurusan::class);

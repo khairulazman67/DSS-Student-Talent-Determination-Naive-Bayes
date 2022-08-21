@@ -93,8 +93,10 @@ class Admin extends Controller
      */
     public function edit($id)
     {
-        $data = DB::table('users')->where('id', $id)->first();
-        return view('admin.datastudent', compact('data'));
+        $jurusan = Jurusan::all();
+        $prodi = Prodi::all();
+        $data = User::where('id', $id)->get();
+        return view('admin.datastudent', compact('data','jurusan','prodi'));
     }
 
     /**
