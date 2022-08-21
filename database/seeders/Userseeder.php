@@ -16,8 +16,6 @@ class Userseeder extends Seeder
      */
     public function run()
     {
-        public function run()
-    {
         User::create(
             [
                 'nama' => 'admin',
@@ -48,6 +46,5 @@ class Userseeder extends Seeder
                 'password' => Hash::make('azman123'),
             ]
         );
-    }
     }
 }
