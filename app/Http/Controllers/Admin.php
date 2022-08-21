@@ -16,11 +16,13 @@ class Admin extends Controller
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
+     *
      */
     public function index()
     {
         $data = DB::table('hasilpengujians')->get();
         $count = DB::table('hasilpengujians')->count();
+// sads
         $mhs = DB::table('users')->where('isAdmin', '0')->count();
         return view('admin.homepage', compact('data','count','mhs') );
     }
@@ -108,7 +110,7 @@ class Admin extends Controller
      */
     public function update(Request $request, $id)
     {
-        
+
     }
 
     /**
@@ -138,7 +140,7 @@ class Admin extends Controller
         return view('admin.pengujian', compact('verbal', 'numerik'));
     }
 
-    public function histori(){ 
+    public function histori(){
         $title = "Histori";
         $data = DB::table('hasilpengujians')->get();
         return view('admin.histori', compact('data', 'title'));
