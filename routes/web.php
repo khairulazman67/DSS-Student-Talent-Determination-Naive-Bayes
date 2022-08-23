@@ -6,6 +6,9 @@ use App\Http\Controllers\StudentController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\SoalController;
+use App\Http\Controllers\TestController;
+
+use App\Http\Controllers\TrainingController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -27,10 +30,15 @@ Route::prefix('admin')->group(function(){
     Route::middleware(['auth:sanctum','admin'])->group(function(){
         //Data Soal
         Route::get('/datasoal', [SoalController::class,'index'])->name('dataSoal');
+        Route::post('/datasoal/{id}', [SoalController::class, 'insert'])->name('saveDataSoal');
+
+        Route::get('/pengujian', [TrainingController::class, 'index'])->name('pengujian');
+        Route::post('/dataTraining/{id}', [TrainingController::class, 'insert'])->name('saveDataTraining');
 
         Route::get('/', [AdminController::class, 'index'])->name('homepage');
         Route::get('/Userstudent', [AdminController::class, 'Userstudent'])->name('student');
-        Route::get('/pengujian', [AdminController::class, 'pengujian'])->name('pengujian');
+
+
         Route::get('/mahasiswa/{id}', [AdminController::class, 'edit'])->name('User');
         Route::get('/save/{id}', [AdminController::class, 'update'])->name('edit');
         Route::get('/histori', [AdminController::class, 'histori'])->name('historis');
@@ -41,6 +49,9 @@ Route::prefix('admin')->group(function(){
 
 Route::prefix('user')->group(function(){
     Route::middleware(['auth:sanctum','user'])->group(function(){
+
+        Route::post('/hitung', [TestController::class, 'index'])->name('prosHitung');
+
         Route::get('/', [UserController::class, 'index']);
         Route::get('/prosuji', [UserController::class, 'index'])->name('prosuji');
         Route::get('/hasil', [UserController::class, 'hasil'])->name('hasil');

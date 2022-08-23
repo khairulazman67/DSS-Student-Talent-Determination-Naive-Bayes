@@ -10,12 +10,17 @@ class Pengujian extends Model
     use HasFactory;
     protected $table ='pengujians';
     protected $fillable = [
-        'tipe',
+        'id_bakat',
+        'soal',
         'a',
         'b',
         'c',
         'd',
-        'jawaban',
-        'gambar'
     ];
+
+    public function Bakat(){
+        return $this->belongsTo(Bakat::class,'id_bakat','id');
+    }
+
+
 }

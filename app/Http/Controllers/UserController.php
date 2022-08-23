@@ -32,21 +32,8 @@ class UserController extends Controller
     }
 
     public function test($id){
-
-        if ($id == 1){
-            $tipe = "verbal";
-        }if($id == 2 ){
-            $tipe = "numerik";
-        }if($id == 3){
-            $tipe = "skolastik";
-        }if($id == 4){
-            $tipe = "spasial";
-        }if($id == 5){
-            $tipe = "bahasa";
-        }
-
-        $soal = DB::table('soals')->where('tipe', $tipe)->get();
-        return view('user.test', compact('soal','id','tipe'));
+        $soal = DB::table('pengujians')->where('id_bakat', $id)->get();
+        return view('user.test', compact('soal','id'));
     }
     public function histori(){
         $id = Auth::user()->id;

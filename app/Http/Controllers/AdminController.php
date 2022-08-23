@@ -130,14 +130,6 @@ class AdminController extends Controller
     	return view('admin.tabledata', compact('pegawai', 'u'));
     }
 
-    public function pengujian(){
-        $verbal = DB::table('datasets')->where('Hasil','like','%Verbal%')->limit(5)->get();
-        $numerik = DB::table('datasets')->where('Hasil','like','%Numerik%')->limit(5)->get();
-        // $data = DB::table('datasets')->where('Hasil','like','%%')->limit(5)->get();
-        // $data = DB::table('datasets')->where('Hasil','like','%%')->limit(5)->get();
-        // $data = DB::table('datasets')->where('Hasil','like','%%')->limit(5)->get();
-        return view('admin.pengujian', compact('verbal', 'numerik'));
-    }
 
     public function histori(){
         $title = "Histori";

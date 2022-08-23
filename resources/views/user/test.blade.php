@@ -23,42 +23,32 @@
                         Soal :
                     </h2>
                 </div>
-                <form action="" method="POST">
+                <form action="{{route('prosHitung')}}" method="POST">
                     @csrf
-                    {{-- @foreach ($soal as $i => $s) --}}
+                    @foreach ($soal as $i => $s)
                         <div class="px-4 py-2">
                             <h2 class="font-serif">
-                                {{-- {{ ++$i }}. --}}
-                                {{-- {{ $s->soal }} --}}
+                                {{ ++$i }}.
+                                {{ $s->soal }}
                             </h2>
                         </div>
                         <div class="mx-8 space-y-4 py-4">
                             <div class="form-check space-x-2">A
-                                {{-- <input type="radio" name="{{ $s->id }}" id="{{ $s->id }}" value="a"> {{ $s->a }} --}}
+                                <input type="radio" name="{{ $s->id }}" id="{{ $s->id }}" value="{{ $s->a }}"> {{ $s->a }}
                             </div>
                             <div class="form-check space-x-2">B
-                                {{-- <input type="radio" name="{{ $s->id }}" id="{{ $s->id }}" value="b"> {{ $s->b }} --}}
+                                <input type="radio" name="{{ $s->id }}" id="{{ $s->id }}" value="{{ $s->a }}"> {{ $s->b }}
                             </div>
                             <div class="form-check space-x-2">C
-                                {{-- <input type="radio" name="{{ $s->id }}" id="{{ $s->id }}" value="c"> {{ $s->c }} --}}
+                                <input type="radio" name="{{ $s->id }}" id="{{ $s->id }}" value="{{ $s->a }}"> {{ $s->c }}
                             </div>
                             <div class="form-check space-x-2">D
-                                {{-- <input type="radio" name="{{ $s->id }}" id="{{ $s->id }}" value="D"> {{ $s->d }} --}}
+                                <input type="radio" name="{{ $s->id }}" id="{{ $s->id }}" value="{{ $s->a }}"> {{ $s->d }}
                             </div>
                         </div>
-                    {{-- @endforeach --}}
+                    @endforeach
                     <div class="my-4 mx-4 flex justify-end">
-                        <?php
-                        if ($tipe != "bahasa"){
-                            ?>
-                            {{-- <a href="{{ route('hitung',$id+1) }}" class="rounded-lg py-1 px-6 text-white" style="background-color: rgba(64, 94, 79, 1)">Next</a> --}}
-                            <?php
-                        }else{
-                            ?>
-                            {{-- <a href="{{ route('hitung',$id+1) }}" class="rounded-lg py-1 px-6 text-white" style="background-color: rgba(64, 94, 79, 1)">Selesai</a> --}}
-                            <?php
-                        }
-                        ?>
+                        <button type="submit">Simpan</button>
                     </div>
                 </form>
             </div>
