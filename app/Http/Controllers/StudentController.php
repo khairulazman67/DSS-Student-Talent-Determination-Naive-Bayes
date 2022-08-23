@@ -5,13 +5,12 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-class Studentpage extends Controller
+class StudentController extends Controller
 {
     public function index()
     {
     	$pegawai = DB::table('users')->get();
     	return view('admin.tabledata',['data' => $pegawai]);
- 
     }
     public function pengujian(){
         $verbal = DB::table('dataset')->where('Hasil','like','%Verbal%')->limit(5)->get();
@@ -31,7 +30,7 @@ class Studentpage extends Controller
         echo $request;
     }
 
-    public function histori(){ 
+    public function histori(){
         $title = "Histori";
         $data = DB::table('historis')->get();
         return view('admin.histori', compact('data', 'title'));

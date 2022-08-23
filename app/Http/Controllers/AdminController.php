@@ -10,7 +10,7 @@ use Illuminate\Validation\Rules;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
-class Admin extends Controller
+class AdminController extends Controller
 {
     /**
      * Display a listing of the resource.

@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 
-class Data extends Controller
+class UserController extends Controller
 {
     public function index(){
         $id = Auth::user()->id;

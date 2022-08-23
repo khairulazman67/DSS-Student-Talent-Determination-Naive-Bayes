@@ -15,14 +15,15 @@ return new class extends Migration
     {
         Schema::create('pengujians', function (Blueprint $table) {
             $table->id();
-            $table->string('tipe');
+
+            $table->unsignedBigInteger('id_bakat');
+            $table->foreign('id_bakat')->references('id')->on('bakats')->onDelete('cascade');
+
             $table->string('soal');
             $table->string('a');
             $table->string('b');
             $table->string('c');
             $table->string('d');
-            $table->string('jawaban');
-            $table->string('gambar');
             $table->timestamps();
         });
     }

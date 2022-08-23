@@ -15,8 +15,10 @@ return new class extends Migration
     {
         Schema::create('datasets', function (Blueprint $table) {
             $table->id();
-            $table->string('nim');
-            $table->string('nama');
+
+            $table->unsignedBigInteger('id_bakat');
+            $table->foreign('id_bakat')->references('id')->on('bakats')->onDelete('cascade');
+
             $table->string('soal1');
             $table->string('soal2');
             $table->string('soal3');
